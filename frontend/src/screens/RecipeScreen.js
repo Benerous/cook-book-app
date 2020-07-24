@@ -17,6 +17,7 @@ function RecipeScreen(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         dispatch(detailsRecipe(props.match.params.id));
         dispatch(listRecipes('', props.match.params.id));
         if (successUpdate) {
@@ -105,10 +106,10 @@ function RecipeScreen(props) {
                 <div className="col-12 text-center">
                     <h4 className="pb-3 text-orange">Alternative recipes</h4>
                 </div>
-                <ul className="list-unstyled row justify-content-center justify-content-lg-start ">
+                <ul className="list-unstyled row justify-content-center">
                     {
                         recipes !== undefined && recipes.filter(item => item.parentRecipe === recipe._id).map(childRecipe => 
-                            <li key={childRecipe._id} className="col-6 col-lg-3 row">
+                            <li key={childRecipe._id} className="col-6 col-lg-4 row p-2">
                                 <Link className="col-12 text-center" to={`/recipe/${childRecipe._id}`}>
                                         <img className="recipe-image rounded" src={childRecipe.image} alt="food img" />
                                 </Link>
@@ -116,11 +117,11 @@ function RecipeScreen(props) {
                             </li>
                         )
                     }
-                    <div className="col-5 col-lg-2 align-self-center text-center">
+                    <li className="col-12 col-lg-4 row px-0 py-lg-3 align-self-center justify-content-center">
                         <Link className="" to={`/child`}>
                             <button className="btn btn-outline bg-white"><i className="fa fa-plus w3-xxlarge light text-orange"></i></button>
                         </Link>
-                    </div>
+                    </li>
                 </ul>
             </div>
             <div className="text-center fixed-bottom row justify-content-center">

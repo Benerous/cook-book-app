@@ -73,7 +73,10 @@ function MainScreen(props) {
                                         <div className="title text-orange col-12 col-lg-6">
                                             <Link to={`/recipe/${recipe._id}`}>{recipe.title}</Link>
                                         </div>
-                                        <div className="recipe-date col-12 col-lg-6">Created at: <b>{recipe.createdAt.split('T')[0]}</b></div>
+                                        <div className="recipe-date col-12 col-lg-6">
+                                            <h6 className="col-12">Created at:</h6>
+                                            <h6 className="col-12"><b>{recipe.createdAt.split('T')[0]}</b></h6>
+                                        </div>
                                     </div>
                                     <div className="recipe-description col-12 px-0 py-2">{ellipsify(recipe.description)}</div>
                                 </div>
@@ -82,7 +85,7 @@ function MainScreen(props) {
                 }
                 <li className="text-center">
                     <Link className="" to="/new"> 
-                        <button className="btn btn-outline bg-white w-100 py-3 fixed-bottom text-orange">
+                        <button className="btn btn-outline bg-white w-100 py-2 fixed-bottom text-orange">
                             <h6>Add recipe <i className="fa fa-plus w3-large"></i></h6>
                         </button>
                     </Link>

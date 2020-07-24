@@ -22,6 +22,7 @@ function AddChildRecipeScreen(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        window.scrollTo(0, 0)
         if (recipeInfo) {
             setTitle(recipeInfo.title);
             setIngredients(recipeInfo.ingredients);

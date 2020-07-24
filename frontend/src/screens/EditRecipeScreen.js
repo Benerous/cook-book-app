@@ -31,6 +31,7 @@ function EditRecipeScreen(props) {
     }, [recipeInfo]);
 
     const submitHandler = (e) => {
+        window.scrollTo(0, 0)
         e.preventDefault();
         dispatch(updateRecipe({ recipeId: recipeInfo._id, title, image, ingredients, method, description}));
         props.history.push('/recipe/' + recipeInfo._id);
