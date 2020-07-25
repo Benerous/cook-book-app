@@ -11,10 +11,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top row justify-content-center">
-            <Link to="/" className="navbar-brand font-weight-bold text-orange mx-0">COOK BOOK <i className="fa fa-book w3-xlarge"></i></Link>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top row justify-content-center py-0">
+            <Link to="/" className="navbar-brand text-orange mx-0">
+              <h3 className="font-weight-bold">COOK BOOK <i className="fa fa-book w3-xlarge"></i></h3> 
+            </Link>
         </nav>
-        <main className="pt-3 pb-5">
+        <main className="pt-4 pb-5">
           <div className="content">
             <Route path="/" exact={true} component={MainScreen} />
             <Route path="/recipe/:id" component={RecipeScreen} />

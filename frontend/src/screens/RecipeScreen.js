@@ -17,7 +17,7 @@ function RecipeScreen(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        window.scrollTo(0, 0)
+        window.scrollTo(0, 0);
         dispatch(detailsRecipe(props.match.params.id));
         dispatch(listRecipes('', props.match.params.id));
         if (successUpdate) {
@@ -47,7 +47,7 @@ function RecipeScreen(props) {
             <div className="pt-4">
         <Link to={(recipe.parentRecipe) ? `/recipe/${recipe.parentRecipe}` : "/"}>
             {
-                recipe.parentRecipe ? <i className="text-orange fa fa-angle-left w3-large"> Previous</i>
+                recipe.parentRecipe ? <i className="font-weight-bold text-orange fa fa-angle-left w3-large"> Previous</i>
                 : <i className="text-orange fa fa-angle-left w3-xxlarge"></i>
             }
         </Link>
@@ -58,7 +58,7 @@ function RecipeScreen(props) {
                 </div>
                 <div className="col-12 col-lg-6 row justify-content-center">
                     <div className="row col-12 text-center px-0">
-                        <h3 className="col-6 py-2 align-self-center text-orange">{recipe.title}</h3>
+                        <h3 className="col-6 py-2 align-self-center text-orange font-weight-bold">{recipe.title}</h3>
                         <div className="col-6 row align-items-center">
                             <div className="col-12 ">
                                 <h6 className="col-12 align-self-center"><b>Created at:</b></h6>
@@ -117,19 +117,19 @@ function RecipeScreen(props) {
                             </li>
                         )
                     }
-                    <li className="col-12 col-lg-4 row px-0 py-lg-3 align-self-center justify-content-center">
+                    <li className="col-6 col-lg-4 row px-0 py-lg-3 align-self-center justify-content-center">
                         <Link className="" to={`/child`}>
                             <button className="btn btn-outline bg-white"><i className="fa fa-plus w3-xxlarge light text-orange"></i></button>
                         </Link>
                     </li>
                 </ul>
             </div>
-            <div className="text-center fixed-bottom row justify-content-center">
-                <button onClick={deleteHandler} className="btn btn-outline bg-white col-6 py-3 text-orange">
-                    Delete <i className="fa fa-trash w3-large"></i>
+            <div className="text-center fixed-bottom row justify-content-center bg-white">
+                <button onClick={deleteHandler} className="btn btn-outline bg-white col-6 py-3 text-orange font-weight-bold">
+                    <h6 className="font-weight-bold">Delete <i className="fa fa-trash w3-large"></i></h6>
                 </button>
-                <Link className="btn btn-outline bg-white col-6 py-3 link-unstyled text-orange" to={`/edit/${recipe._id}`} >
-                    Edit <i className="fa fa-pencil w3-large"></i>
+                <Link className="btn btn-outline bg-white col-6 py-3 link-unstyled text-orange font-weight-bold" to={`/edit/${recipe._id}`} >
+                    <h6 className="font-weight-bold">Edit <i className="fa fa-pencil w3-large"></i></h6>
                 </Link>
             </div>
         </div>

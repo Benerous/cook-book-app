@@ -33,7 +33,7 @@ const detailsRecipe = (recipeId) => async (dispatch) => {
         dispatch({ type: RECIPE_DETAILS_REQUEST, payload: recipeId });
         const { data } = await Axios.get(`/api/recipes/${recipeId}`);
         dispatch({ type: RECIPE_DETAILS_SUCCESS, payload: data });
-        Cookie.set('recipeInfo', JSON.stringify(data));
+        Cookie.set('recipeInfo', JSON.stringify(data), { sameSite: 'strict' });
     } catch (error) {
         dispatch({ type: RECIPE_DETAILS_FAIL, payload: error.message});
     }
