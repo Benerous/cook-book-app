@@ -53,7 +53,7 @@ function RecipeScreen(props) {
         </Link>
             </div>
             <div className="recipe-details row justify-content-center py-4 border-bottom fade-in">
-                <div className="col-12 col-lg-6 text-center align-self-center">
+                <div className="col-12 col-lg-6 text-center py-lg-5">
                     <img className="recipe-details-image rounded" src={recipe.image} alt="cook_book"></img>
                 </div>
                 <div className="col-12 col-lg-6 row justify-content-center">
