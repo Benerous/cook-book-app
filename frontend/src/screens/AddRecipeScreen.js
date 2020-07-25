@@ -95,10 +95,10 @@ function AddRecipeScreen(props) {
                                     <input className="col-5 border-0" name="ingredient" placeholder="Ingredient" value={item.ingredient} onChange={(e) => handleIngredientInputChange(e, index)} required/>
                                     <input className="col-5 border-0" name="quantity" placeholder="Quantity" value={item.quantity} onChange={(e) => handleIngredientInputChange(e, index)} required/>
                                     <div className="col-1 text-center">
-                                        {ingredients.length !== 1 && <button className="btn btn-outline-light text-dark border-0" onClick={() => handleIngredientRemoveClick(index)}><i className="text-orange fa fa-times medium"></i></button>}
+                                        {ingredients.length !== 1 && <span className="btn btn-outline-light text-dark border-0" onClick={() => handleIngredientRemoveClick(index)}><i className="text-orange fa fa-times medium"></i></span>}
                                     </div>
                                     <div className="col-12 text-center py-2">
-                                        {ingredients.length - 1 === index && <button className="btn btn-outline-light text-dark rounded-circle border-orange text-orange" onClick={handleIngredientAddClick}><i className="fa fa-plus w3-medium"></i></button>}
+                                        {ingredients.length - 1 === index && <span className="btn btn-outline-light text-dark rounded-circle border-orange text-orange" onClick={handleIngredientAddClick}><i className="fa fa-plus w3-medium"></i></span>}
                                     </div>
                                 </div>
                             )}
@@ -112,10 +112,10 @@ function AddRecipeScreen(props) {
                                     <h6 className="col-1 text-orange">{index + 1}</h6>
                                     <textarea className="col-9 border-0" name="directions" placeholder="Directions" value={step.directions} onChange={(e) => handleStepInputChange(e, index)} required/>
                                     <div className="col-1">
-                                        {method.length !== 1 && <button className="btn btn-outline-light text-dark border-0" onClick={() => handleStepRemoveClick(index)}><i className="text-orange fa fa-times medium"></i></button>}
+                                        {method.length !== 1 && <span className="btn btn-outline-light text-dark border-0" onClick={() => handleStepRemoveClick(index)}><i className="text-orange fa fa-times medium"></i></span>}
                                     </div>
                                     <div className="col-12 text-center py-2">
-                                        {method.length - 1 === index && <button className="btn btn-outline-light text-dark rounded-circle border-orange text-orange" onClick={() => handleStepAddClick(index + 1)}><i className="fa fa-plus w3-medium"></i></button>}
+                                        {method.length - 1 === index && <span className="btn btn-outline-light text-dark rounded-circle border-orange text-orange" onClick={() => handleStepAddClick(index + 1)}><i className="fa fa-plus w3-medium"></i></span>}
                                     </div>
                                 </div>
                             )}

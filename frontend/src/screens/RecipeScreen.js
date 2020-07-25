@@ -12,7 +12,7 @@ function RecipeScreen(props) {
     const { loading: loadingUpdate, success: successUpdate, error: errorUpdate } = recipeUpdate;
 
     const recipeList = useSelector(state => state.recipeList);
-    const { recipes } = recipeList;
+    const { recipes, loading: loadingList } = recipeList;
 
     const dispatch = useDispatch();
 
@@ -36,7 +36,7 @@ function RecipeScreen(props) {
         }
     }
 
-    return loading || loadingUpdate ? <div className="text-center py-4"><div className="lds-dual-ring"></div></div>
+    return loading || loadingUpdate || loadingList ? <div className="text-center py-4"><div className="lds-dual-ring"></div></div>
     : error ? <div className="text-center text-danger py-4"><i className="fa fa-times w3-xlarge" /> Error while processing</div>
     : (
         <div className="container">

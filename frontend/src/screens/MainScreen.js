@@ -13,10 +13,10 @@ function MainScreen(props) {
     const { recipes, loading, error } = recipeList;
 
     const recipeSave = useSelector(state => state.recipeSave);
-    const { success: successSave, error: errorSave } = recipeSave;
+    const { success: successSave, loading: loadingSave, error: errorSave } = recipeSave;
 
     const recipeDelete = useSelector(state => state.recipeDelete);
-    const { success: successDelete, error: errorDelete } = recipeDelete;
+    const { success: successDelete, loading: loadingDelete, error: errorDelete } = recipeDelete;
 
     const dispatch = useDispatch();
 
@@ -43,7 +43,7 @@ function MainScreen(props) {
         return string.length > 300 ? string.substring(0, 300) + '...' : string;
     }
 
-    return loading ? <div className="text-center py-4"><div className="text-orange lds-dual-ring"></div></div>
+    return loading || loadingSave || loadingDelete ?  <div className="text-center py-4"><div className="text-orange lds-dual-ring"></div></div>
     : error ? <div className="text-center text-danger py-4"><i className="fa fa-times w3-xlarge" /> Error while processing</div>
     : (
         <div className="container">
