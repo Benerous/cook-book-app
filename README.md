@@ -16,7 +16,7 @@
 ## Demo Website
 Deme: https://benerous-cook-book-app.herokuapp.com/
 
-## Main Applications Dependencies
+## Main Application's Dependencies
 - React.js - v9.5.0
 - Redux - v4.0.5
 - Node.js - v12.14.1
