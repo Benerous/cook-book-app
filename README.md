@@ -41,7 +41,7 @@ npm install
 npm start
 ```
 - Run Frontend
-open new terminal 
+  - open new terminal 
 ```bash
 cd frontend
 npm install
