@@ -45,7 +45,7 @@ function MainScreen(props) {
     return loading || loadingSave || loadingDelete ?  <div className="text-center py-4"><div className="text-orange lds-dual-ring"></div></div>
     : error ? <div className="text-center text-danger py-4"><i className="fa fa-times w3-xlarge" /> Error while processing</div>
     : (
-        <div className="container">
+        <div className="container px-0">
             {successSave ? <div className="popup-message fixed-top bg-success py-3">Recipe Created <i className="text-white fa fa-check w3-xlarge"></i></div>
             : errorSave ? <div className="popup-message fixed-top bg-danger py-3">Error while creating <i className="text-white fa fa-times w3-xlarge"></i></div>
             : successDelete ?  <div className="popup-message fixed-top bg-success py-3">Recipe Deleted <i className="text-white fa fa-check w3-xlarge"></i></div>
