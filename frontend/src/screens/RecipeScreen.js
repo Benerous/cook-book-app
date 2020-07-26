@@ -20,18 +20,17 @@ function RecipeScreen(props) {
         window.scrollTo(0, 0);
         dispatch(detailsRecipe(props.match.params.id));
         dispatch(listRecipes('', props.match.params.id));
-        if (successUpdate) {
-            delete recipeUpdate.success;
-        }
         return () => {
-            //
+            if (successUpdate) {
+                delete recipeUpdate.success;
+            }
         }
     }, [props.match.params])
 
-    const deleteHandler = () => {
+    const deleteHandler = async () => {
         const answer = window.confirm(`Are you sure you want to delete ${recipe.title} ?`);
         if (answer) {
-            dispatch(deleteRecipe(recipe._id));
+            await dispatch(deleteRecipe(recipe._id));
             props.history.push('/');
         }
     }
@@ -124,11 +123,11 @@ function RecipeScreen(props) {
                     </li>
                 </ul>
             </div>
-            <div className="text-center fixed-bottom row justify-content-center bg-white">
-                <button onClick={deleteHandler} className="btn btn-outline bg-white col-6 py-3 text-orange font-weight-bold">
+            <div className="text-center fixed-bottom row justify-content-center bg-white shadow-lg">
+                <button onClick={deleteHandler} className="btn btn-outline bg-white col-6 text-orange font-weight-bold">
                     <h6 className="font-weight-bold">Delete <i className="fa fa-trash w3-large"></i></h6>
                 </button>
-                <Link className="btn btn-outline bg-white col-6 py-3 link-unstyled text-orange font-weight-bold" to={`/edit/${recipe._id}`} >
+                <Link className="btn btn-outline bg-white col-6 link-unstyled text-orange font-weight-bold" to={`/edit/${recipe._id}`} >
                     <h6 className="font-weight-bold">Edit <i className="fa fa-pencil w3-large"></i></h6>
                 </Link>
             </div>

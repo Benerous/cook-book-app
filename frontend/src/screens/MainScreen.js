@@ -23,12 +23,11 @@ function MainScreen(props) {
     useEffect(() => {
         dispatch(listRecipes());
         setSearchKeyword('');
-        if (successSave || successDelete) {
-            delete recipeSave.success;
-            delete recipeDelete.success;
-        }
         return () => {
-            //
+            if (successSave || successDelete) {
+                delete recipeSave.success;
+                delete recipeDelete.success;
+            }
         }
     }, [props.match.params])
 
@@ -47,10 +46,10 @@ function MainScreen(props) {
     : error ? <div className="text-center text-danger py-4"><i className="fa fa-times w3-xlarge" /> Error while processing</div>
     : (
         <div className="container">
-            {successSave ? <div className="popup-message fixed-top bg-success py-3">Recipe Created</div>
-            : errorSave ? <div className="popup-message fixed-top bg-danger py-3">Error while creating</div>
-            : successDelete ?  <div className="popup-message fixed-top bg-success py-3">Recipe Deleted</div>
-            : errorDelete && <div className="popup-message fixed-top bg-danger py-3">Error while deleting</div>
+            {successSave ? <div className="popup-message fixed-top bg-success py-3">Recipe Created <i className="text-white fa fa-check w3-xlarge"></i></div>
+            : errorSave ? <div className="popup-message fixed-top bg-danger py-3">Error while creating <i className="text-white fa fa-times w3-xlarge"></i></div>
+            : successDelete ?  <div className="popup-message fixed-top bg-success py-3">Recipe Deleted <i className="text-white fa fa-check w3-xlarge"></i></div>
+            : errorDelete && <div className="popup-message fixed-top bg-danger py-3">Error while deleting <i className="text-white fa fa-times w3-xlarge"></i></div>
             }
             <form className="row justify-content-center pt-4 py-lg-5" onSubmit={submitHandler}>
                 <input className="col-6 col-lg-4 border-0 h5 m-0" type="text" name="searchKeyword" id="searchKeyword" defaultValue={searchKeyword} 
@@ -85,7 +84,7 @@ function MainScreen(props) {
                 }
                 <li className="text-center">
                     <Link className="" to="/new"> 
-                        <button className="btn btn-outline bg-white w-100 py-2 fixed-bottom text-orange">
+                        <button className="btn btn-outline bg-white w-100 py-1 fixed-bottom text-orange shadow-lg">
                             <h6 className="font-weight-bold">Add recipe <i className="fa fa-plus w3-large"></i></h6>
                         </button>
                     </Link>

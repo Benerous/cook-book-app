@@ -31,10 +31,10 @@ function EditRecipeScreen(props) {
         };
     }, []);
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         window.scrollTo(0, 0)
         e.preventDefault();
-        dispatch(updateRecipe({ recipeId: recipeInfo._id, title, image, ingredients, method, description}));
+        await dispatch(updateRecipe({ recipeId: recipeInfo._id, title, image, ingredients, method, description}));
         props.history.push('/recipe/' + recipeInfo._id);
     };
 
@@ -140,9 +140,7 @@ function EditRecipeScreen(props) {
                             <textarea className="col-12 border-0" placeholder="Desciption" type="text" name="description" id="description" onChange={e => setDescription(e.target.value)} defaultValue={description} required/>
                         </div>
                     </li>
-                    <li className="col-12 py-2 text-center">
-                        <button type="submit" className="btn btn-outline bg-white text-orange border-orange font-weight-bold">EDIT RECIPE</button>
-                    </li>
+                    <button type="submit" className="btn btn-outline bg-white col-12 text-center font-weight-bold fixed-bottom shadow-lg text-orange font-weight-bold py-3 w-100">EDIT RECIPE</button>
                 </ul>
             </form>
         </div>

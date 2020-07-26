@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
     const searchKeyword = req.query.searchKeyword
         ? {
             title: {
-                $regex: req.query.searchKeyword,
+                $regex: req.query.searchKeyword.trim(),
                 $options: 'i',
             }
         }

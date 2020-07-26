@@ -25,9 +25,9 @@ function AddRecipeScreen(props) {
         };
     }, []);
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
-        dispatch(saveRecipe({ title, image, ingredients, method, description }));
+        await dispatch(saveRecipe({ title, image, ingredients, method, description }));
         props.history.push('/');
     };
 
@@ -127,15 +127,13 @@ function AddRecipeScreen(props) {
                             <input type="text" className="col-12 border-0" placeholder="Image path" name="image" id="image" onClick={(e) => e.target.value = ""} onChange={e => setImage(e.target.value)} required/>
                         </div>
                     </li>
-                    <li className="col-12 py-2">
+                    <li className="col-12 pt-2 pb-4">
                         <div className="row">
                             <h5 className="col-12 text-orange" htmlFor="description">DESCRIPTION</h5>
                             <textarea className="col-12 border-0" placeholder="Desciption" type="text" name="description" id="description" onChange={e => setDescription(e.target.value)} required/>
                         </div>
                     </li>
-                    <li className="col-12 py-2 text-center">
-                        <button type="submit" className="btn btn-outline bg-white border-orange text-orange font-weight-bold">ADD RECIPE</button>
-                    </li>
+                    <button type="submit" className="btn btn-outline bg-white col-12 text-center font-weight-bold fixed-bottom shadow-lg text-orange font-weight-bold py-3 w-100">ADD RECIPE</button>
                 </ul>
             </form>
             {loadingSave && <div className="text-center py-4"><div className="lds-dual-ring"></div></div>}

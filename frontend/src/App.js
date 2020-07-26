@@ -11,9 +11,9 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top row justify-content-center py-0">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top row justify-content-center py-0 shadow-sm">
             <Link to="/" className="navbar-brand text-orange mx-0">
-              <h3 className="font-weight-bold">COOK BOOK <i className="fa fa-book w3-xlarge"></i></h3> 
+              <h3 className="font-weight-bold my-0 py-2">COOK BOOK <i className="fa fa-book w3-xlarge"></i></h3> 
             </Link>
         </nav>
         <main className="pt-4 pb-5">

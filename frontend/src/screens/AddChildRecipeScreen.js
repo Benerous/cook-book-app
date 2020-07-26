@@ -35,9 +35,9 @@ function AddChildRecipeScreen(props) {
         };
     }, []);
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
-        dispatch(saveChildRecipe({ title, image, ingredients, method, description }, recipeInfo._id));
+        await dispatch(saveChildRecipe({ title, image, ingredients, method, description }, recipeInfo._id));
         props.history.push('/');
     };
 
@@ -143,9 +143,7 @@ function AddChildRecipeScreen(props) {
                             <textarea className="col-12 border-0" placeholder="Desciption" type="text" name="description" id="description" onChange={e => setDescription(e.target.value)} defaultValue={description} required/>
                         </div>
                     </li>
-                    <li className="col-12 py-2 text-center">
-                        <button type="submit" className="btn btn-outline bg-white text-orange border-orange font-weight-bold">ADD RECIPE</button>
-                    </li>
+                    <button type="submit" className="btn btn-outline bg-white col-12 text-center font-weight-bold fixed-bottom shadow-lg text-orange font-weight-bold py-3 w-100">ADD RECIPE</button>
                 </ul>
             </form>
             {loadingSave && <div className="text-center py-4"><div className="lds-dual-ring"></div></div>}
