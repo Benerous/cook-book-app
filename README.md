@@ -16,6 +16,15 @@
 ## Demo Website
 Deme: https://benerous-cook-book-app.herokuapp.com/
 
+## Main Applications Dependencies
+- React.js - v9.5.0
+- Redux - v4.0.5
+- Node.js - v12.14.1
+- Express - v4.17.1
+- MongoDB - v4.2.8
+- Mongoose - v5.9.24
+- Bootstrap - 4.5.0
+
 ## Warning
 ### Currently adding image to recipe is possible only via URL, so image with local path won't be shown on application.
 
