@@ -40,8 +40,7 @@ cd backend
 npm install
 npm start
 ```
-- Run Frontend
-  - open new terminal 
+- Run Frontend (in new terminal)
 ```bash
 cd frontend
 npm install
