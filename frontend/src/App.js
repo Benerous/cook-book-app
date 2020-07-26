@@ -16,7 +16,7 @@ function App() {
               <h3 className="font-weight-bold my-0 py-2">COOK BOOK <i className="fa fa-book w3-xlarge"></i></h3> 
             </Link>
         </nav>
-        <main className="pt-4 pb-5">
+        <main className="py-5">
           <div className="content">
             <Route path="/" exact={true} component={MainScreen} />
             <Route path="/recipe/:id" component={RecipeScreen} />

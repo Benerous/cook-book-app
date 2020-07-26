@@ -14,7 +14,7 @@
 - Recipes sorted alphabetically on any depth.
 
 ## Demo Website
-Deme: [https://benerous-cook-book-app.herokuapp.com/]
+Deme: https://benerous-cook-book-app.herokuapp.com/
 
 ## Warning
 ### Currently adding image to recipe is possible only via URL, so image with local path won't be shown on application.
