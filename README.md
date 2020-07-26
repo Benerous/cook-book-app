@@ -13,14 +13,17 @@
 - View every previous recipe versions of 'child' recipe if exist (if not - show list of recipes).
 - Recipes sorted alphabetically on any depth.
 
+## Demo Website
+Deme: [https://benerous-cook-book-app.herokuapp.com/]
+
 ## Warning
 ### Currently adding image to recipe is possible only via URL, so image with local path won't be shown on application.
 
 ## Run locally
 - Clone to local machine
 ```bash
-git clone []()
-cd node-react-ecommerce
+git clone [git@github.com:Benerous/cook-book-app.git]
+cd cook-book-app
 ```
 - Run Backend
 ```bash
@@ -35,7 +38,7 @@ cd frontend
 npm install
 npm start
 ```
-# For any questions [Email Benerous](bogdanvyshynsky2201@gmail.com)
+# For any questions [Email Benerous](mailto:bogdanvyshynsky2201@gmail.com)
 
 ## License
 [ISC](https://choosealicense.com/licenses/isc/)
